@@ -288,3 +288,19 @@ main h1{font-size:var(--step-3)}
 .exp-list span{color:var(--muted);font-size:.97rem}
 @media (max-width:860px){.exp-grid{grid-template-columns:1fr}}
 @media (max-width:480px){.exp-list li{grid-template-columns:1fr}}
+
+/* Path to licensure */
+.lic-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.lic-intro{display:grid;gap:18px;min-width:0}
+.lic-intro h2{font-size:var(--step-3)}
+.lic-note{display:grid;gap:12px;border:1px dashed var(--citrine);border-radius:12px;padding:16px 18px;font-size:.95rem;color:var(--fg)}
+.lic-note b{color:var(--citrine);font-weight:600}
+.lic-steps{list-style:none;margin:0;padding:0;counter-reset:lic;display:grid;border-top:1px solid var(--line);min-width:0}
+.lic-steps li{counter-increment:lic;display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.lic-steps li::before{content:counter(lic);grid-row:1 / span 2;font-family:var(--display);font-size:2rem;line-height:1;color:var(--citrine)}
+.lic-steps h3{font-size:var(--step-1);line-height:1.2}
+.lic-steps p{color:var(--muted);font-size:.97rem}
+.lic-source{margin-top:28px;font-size:.88rem;color:var(--muted);max-width:90ch}
+.sup-link{color:#f0cf87;font-size:.95rem}
+.sup-link:hover{color:#fff}
+@media (max-width:860px){.lic-grid{grid-template-columns:1fr}}
