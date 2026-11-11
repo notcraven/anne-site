@@ -79,8 +79,8 @@ section{padding-block:clamp(56px,9vw,104px)}
 /* gem facets */
 .f1{fill:var(--eggplant)} .f2{fill:var(--teal)} .f3{fill:var(--sapphire)} .f4{fill:var(--amethyst)} .f5{fill:var(--citrine)} .f6{fill:var(--teal-deep)}
 .facets polygon{stroke:var(--bg);stroke-width:1.6;stroke-linejoin:round}
-.wing-r{transform-origin:200px 165px;animation:flap 7s ease-in-out infinite}
-.wing-l{transform-origin:200px 165px;animation:flap 7s ease-in-out infinite}
+.wing-r{transform-origin:407.5px 290px;animation:flap 7s ease-in-out infinite}
+.wing-l{transform-origin:407.5px 290px;animation:flap 7s ease-in-out infinite}
 .glint{animation:glint 5s ease-in-out infinite}
 .glint.d2{animation-delay:1.7s}.glint.d3{animation-delay:3.3s}
 @keyframes flap{0%,100%{transform:scaleX(1)}50%{transform:scaleX(.9)}}
@@ -332,3 +332,17 @@ main:focus{outline:none}
 .bf-wrap.paused .sheen{animation:none;opacity:0}
 @media (max-width:860px){.bf-wrap{order:-1;max-width:300px}}
 @media (prefers-reduced-motion: reduce){.motion-toggle{display:none}}
+
+/* ===== New logo ===== */
+.brand-mark{height:32px;width:auto;flex:none;filter:drop-shadow(0 0 5px rgba(185,138,208,.45))}
+.butterfly{filter:drop-shadow(0 0 8px rgba(252,243,221,.35)) drop-shadow(0 0 22px rgba(185,138,208,.45)) drop-shadow(0 0 44px rgba(47,176,166,.30))}
+.bf-wrap{max-width:520px}
+.sheen{animation-name:sheen-wide}
+@keyframes sheen-wide{0%{transform:translateX(-260px);opacity:0}12%{opacity:1}55%{transform:translateX(1000px);opacity:1}62%,100%{transform:translateX(1000px);opacity:0}}
+.foot{align-items:center}
+.foot-logo{width:200px;height:auto;max-width:100%;display:block;flex:none}
+@media (max-width:860px){.bf-wrap{max-width:340px}}
+.foot{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:32px;row-gap:10px;align-items:center}
+.foot-logo{grid-row:span 2}
+.foot .badges{justify-self:start}
+@media (max-width:640px){.foot{grid-template-columns:1fr}.foot-logo{grid-row:auto}}
