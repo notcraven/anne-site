@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Page Not Found | The Difference Counseling</title>
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0e1430">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="/" aria-label="The Difference Counseling Services, home">
+      <svg viewBox="0 0 34 28" aria-hidden="true"><polygon class="f4" points="17,14 6,2 1,10 9,15"/><polygon class="f2" points="17,14 28,2 33,10 25,15"/><polygon class="f1" points="17,15 8,17 6,25 14,22"/><polygon class="f3" points="17,15 26,17 28,25 20,22"/></svg>
+      <span class="brand-name">The Difference<small>Counseling Services</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="/about.html">About Anne</a>
+      <a href="/specialties.html">Specialties</a>
+      <a href="/supervision.html">Supervision</a>
+      <a href="/khufu.html">Khufu</a>
+      <a href="/fees.html">Fees</a>
+      <a class="btn btn-primary" href="/contact.html">Contact Anne</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Page not found</span>
+      <h1>This path doesn't lead anywhere</h1>
+      <p class="lede">The page you're looking for may have moved. Head back to the home page, or reach out to Anne directly.</p>
+    </div>
+    <div class="hero-actions"><a class="btn btn-primary" href="/">Go to the home page</a><a class="btn btn-ghost" href="/contact.html">Contact Anne</a></div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 The Difference Counseling Services · Anne Pidek, LMSW · Grand Blanc, Michigan</span>
+    <span class="badges"><span class="chip">LGBTQ+ affirming</span><span class="chip">Neurodivergent-affirming</span><span class="chip">Trauma-informed</span></span>
+  </div>
+</footer>
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy');
+      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+</body>
+</html>
