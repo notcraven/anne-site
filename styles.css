@@ -264,3 +264,19 @@ main h1{font-size:var(--step-3)}
 .spec-featured .spec:nth-child(5){border-top-color:var(--teal-deep)}
 @media (max-width:1100px){.spec-featured{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:760px){.spec-featured{grid-template-columns:1fr}}
+
+/* Butterfly shimmer */
+.butterfly{filter:drop-shadow(0 0 14px color-mix(in srgb,var(--amethyst) 45%,transparent)) drop-shadow(0 0 32px color-mix(in srgb,var(--teal) 30%,transparent))}
+.sheen-wrap{mix-blend-mode:screen}
+.sheen{transform-box:view-box;animation:sheen 6.5s ease-in-out infinite}
+@keyframes sheen{0%{transform:translateX(-80px);opacity:0}12%{opacity:1}55%{transform:translateX(320px);opacity:1}62%,100%{transform:translateX(320px);opacity:0}}
+.aura{animation:aura 6.5s ease-in-out infinite}
+@keyframes aura{0%,100%{opacity:.75}50%{opacity:1}}
+.tw{transform-box:fill-box;transform-origin:center;opacity:0;animation:twinkle 4.8s ease-in-out infinite}
+.t2{animation-delay:1s}.t3{animation-delay:2.1s}.t4{animation-delay:3.2s}.t5{animation-delay:3.9s}
+@keyframes twinkle{0%,70%,100%{opacity:0;transform:scale(.3) rotate(0deg)}82%{opacity:1;transform:scale(1) rotate(45deg)}}
+@media (prefers-reduced-motion: reduce){.sheen{animation:none;opacity:0}.aura{animation:none}.tw{animation:none;opacity:.7;transform:scale(.7)}}
+:root{--sparkle:#ffffff}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]){--sparkle:#c48a1c}}
+:root[data-theme="light"]{--sparkle:#c48a1c}
+.sparkles{fill:var(--sparkle)}

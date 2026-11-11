@@ -21,7 +21,6 @@
     </a>
     <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav" aria-label="Main">
-      <a href="approach.html">Approach</a>
       <a href="about.html">About Anne</a>
       <a href="specialties.html">Specialties</a>
       <a href="supervision.html">Supervision</a>
@@ -42,7 +41,7 @@
       <p class="lede">Therapy that feels like a conversation. You set the pace, you bring your whole story when you're ready, and we build the tools that fit your life.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="tel:+18102461948">Call (810) 246-1948</a>
-        <a class="btn btn-ghost" href="approach.html">How therapy works here</a>
+        <a class="btn btn-ghost" href="#journey">How therapy works here</a>
       </div>
       <div class="hero-meta">
         <span>In person in Grand Blanc</span>
@@ -74,13 +73,105 @@
             <polygon class="f3" points="280,225 300,280 240,270"/>
           </g>
         </g>
+        <mask id="wing-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="320"><use href="#wing"/></mask>
+        <linearGradient id="sheen-grad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#fff" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="aura-grad">
+          <stop offset="0" stop-color="var(--amethyst)" stop-opacity=".55"/>
+          <stop offset=".55" stop-color="var(--teal)" stop-opacity=".18"/>
+          <stop offset="1" stop-color="var(--teal)" stop-opacity="0"/>
+        </radialGradient>
+        <path id="sparkle" d="M0,-9 C1,-2 2,-1 9,0 C2,1 1,2 0,9 C-1,2 -2,1 -9,0 C-2,-1 -1,-2 0,-9Z"/>
       </defs>
-      <g class="wing-r"><use href="#wing"/></g>
-      <g class="wing-l"><use href="#wing" transform="translate(400,0) scale(-1,1)"/></g>
+      <ellipse class="aura" cx="200" cy="165" rx="200" ry="150" fill="url(#aura-grad)"/>
+      <g class="wing-r"><use href="#wing"/>
+        <g mask="url(#wing-mask)" class="sheen-wrap"><g transform="skewX(-18)"><rect class="sheen" x="120" y="0" width="70" height="320" fill="url(#sheen-grad)"/></g></g>
+      </g>
+      <g class="wing-l"><g transform="translate(400,0) scale(-1,1)"><use href="#wing"/>
+        <g mask="url(#wing-mask)" class="sheen-wrap"><g transform="skewX(-18)"><rect class="sheen" x="120" y="0" width="70" height="320" fill="url(#sheen-grad)"/></g></g>
+      </g></g>
+      <g class="sparkles">
+        <use href="#sparkle" class="tw t1" x="318" y="62"/>
+        <use href="#sparkle" class="tw t2" x="92" y="120"/>
+        <use href="#sparkle" class="tw t3" x="292" y="246"/>
+        <use href="#sparkle" class="tw t4" x="128" y="232"/>
+        <use href="#sparkle" class="tw t5" x="214" y="40"/>
+      </g>
       <ellipse cx="200" cy="170" rx="6" ry="56" class="f5"/>
       <path d="M198 118 C190 90 178 78 166 72 M202 118 C210 90 222 78 234 72" fill="none" stroke="var(--citrine)" stroke-width="2" stroke-linecap="round"/>
       <circle cx="166" cy="72" r="4" class="f5"/><circle cx="234" cy="72" r="4" class="f5"/>
     </svg>
+  </div>
+</section>
+<!-- JOURNEY -->
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The therapy journey</span>
+      <h2>From first hello to finding your wings</h2>
+      <p class="lede">A caterpillar doesn't become a butterfly overnight. Change takes time, patience, and a protected place to do the quiet work. Therapy here follows the same three phases.</p>
+    </div>
+    <div class="phases">
+      <article class="phase">
+        <div class="phase-top"><span class="phase-num">PHASE I</span>
+          <svg viewBox="0 0 72 44" aria-hidden="true"><circle cx="12" cy="28" r="7" class="f2"/><circle cx="25" cy="24" r="7" class="f6"/><circle cx="38" cy="22" r="7" class="f2"/><circle cx="51" cy="24" r="7" class="f6"/><circle cx="62" cy="20" r="8" class="f4"/></svg>
+        </div>
+        <h3>Begin</h3>
+        <span class="sub">Your journey starts here</span>
+        <p>Reaching out is the hardest part. Call or email Anne for a no-pressure first hello, and you'll find a time that works, in Grand Blanc or by video from wherever you feel most comfortable.</p>
+        <ul class="ticks"><li>No commitment, just a conversation</li><li>In-person and virtual options</li><li>You don't need to have it figured out</li></ul>
+      </article>
+      <article class="phase">
+        <div class="phase-top"><span class="phase-num">PHASE II</span>
+          <svg viewBox="0 0 72 44" aria-hidden="true"><line x1="36" y1="0" x2="36" y2="6" stroke="var(--muted)" stroke-width="2"/><polygon class="f1" points="36,6 46,14 44,32 36,42 28,32 26,14"/><polygon class="f4" points="36,6 46,14 36,20"/><polygon class="f3" points="36,20 44,32 36,42"/></svg>
+        </div>
+        <h3>Transform</h3>
+        <span class="sub">The work of healing</span>
+        <p>We talk about what brings you in and what you hope to find, at your pace and on your terms. Together we name your strengths and build coping, communication, and self-care strategies. The cocoon is where the quiet work happens.</p>
+        <ul class="ticks"><li>Trauma-informed by design</li><li>A conversation, never an interrogation</li><li>Your strengths, your plan</li></ul>
+      </article>
+      <article class="phase">
+        <div class="phase-top"><span class="phase-num">PHASE III</span>
+          <svg viewBox="0 0 72 44" aria-hidden="true"><polygon class="f4" points="36,22 18,4 8,16 22,24"/><polygon class="f2" points="36,22 54,4 64,16 50,24"/><polygon class="f1" points="36,24 22,28 20,40 32,36"/><polygon class="f3" points="36,24 50,28 52,40 40,36"/></svg>
+        </div>
+        <h3>Emerge</h3>
+        <span class="sub">Growth and empowerment</span>
+        <p>As the work deepens, you carry practical tools and a clearer sense of yourself well beyond our sessions. The transformation is yours. Anne helps you find your wings.</p>
+        <ul class="ticks"><li>Meaningful, lasting change</li><li>Tools you keep using</li><li>Many clients notice shifts in 4 to 6 weeks</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROTECTION -->
+<section id="protection">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What you can count on</span>
+      <h2>A protected space with steady boundaries</h2>
+      <p class="lede">Every session is held inside a few promises. They hold whether you're on the couch in Grand Blanc or on a screen at home.</p>
+    </div>
+    <div class="wards">
+      <div class="ward">
+        <svg viewBox="0 0 40 48" aria-hidden="true"><polygon class="f2" points="20,2 36,14 30,46 10,46 4,14"/><polygon class="f6" points="20,2 36,14 20,20"/><polygon class="f4" points="4,14 20,20 10,46"/></svg>
+        <div><h3>A conversation, never an exam</h3><p>Therapy can feel scary. Here it feels like talking with someone who listens. You're the expert on you; Anne brings a wide toolkit, and together you find what works.</p></div>
+      </div>
+      <div class="ward">
+        <svg viewBox="0 0 40 48" aria-hidden="true"><polygon class="f1" points="20,2 36,14 30,46 10,46 4,14"/><polygon class="f4" points="20,2 36,14 20,20"/><polygon class="f3" points="4,14 20,20 10,46"/></svg>
+        <div><h3>You decide what you share</h3><p>Anne doesn't ask about trauma. Retelling it can reopen the wound, so you share when you're comfortable and when you want to, never because a form or a question demanded it.</p></div>
+      </div>
+      <div class="ward">
+        <svg viewBox="0 0 40 48" aria-hidden="true"><polygon class="f3" points="20,2 36,14 30,46 10,46 4,14"/><polygon class="f2" points="20,2 36,14 20,20"/><polygon class="f1" points="4,14 20,20 10,46"/></svg>
+        <div><h3>Every identity is welcome</h3><p>LGBTQ+ affirming, neurodivergent-affirming, sex-positive, and kink and polyamory friendly. Come as you are and love how you love.</p></div>
+      </div>
+      <div class="ward">
+        <svg viewBox="0 0 40 48" aria-hidden="true"><polygon class="f5" points="20,2 36,14 30,46 10,46 4,14"/><polygon class="f4" points="20,2 36,14 20,20"/><polygon class="f2" points="4,14 20,20 10,46"/></svg>
+        <div><h3>Your strengths lead</h3><p>We start from what already works in you and build from there: coping skills, communication, and self-care that fit your actual days.</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -91,7 +182,6 @@
       <h2>Start wherever feels right</h2>
     </div>
     <div class="explore">
-      <a class="spec" href="approach.html"><h3>Approach</h3><p>The three phases of therapy here and the promises that hold every session.</p><span class="more">Read more</span></a>
       <a class="spec" href="about.html"><h3>About Anne</h3><p>Twenty-plus years of affirming, trauma-informed work, and how she runs a session.</p><span class="more">Meet Anne</span></a>
       <a class="spec" href="specialties.html"><h3>Specialties</h3><p>Gender-affirming letters, autism, ADHD, LGBTQ+ care, and more.</p><span class="more">See specialties</span></a>
       <a class="spec" href="khufu.html"><h3>Khufu</h3><p>The hairless Sphynx therapy cat who joins sessions only when invited.</p><span class="more">Meet Khufu</span></a>
