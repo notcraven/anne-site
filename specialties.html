@@ -49,8 +49,31 @@
     </div>
     <div class="spec-all">
       <h3>Also working with</h3>
+      <p class="tip-hint">Hover or tap any topic to learn more.</p>
       <div class="chips">
-        <span class="chip">Anxiety</span><span class="chip">Depression</span><span class="chip">Trauma &amp; PTSD</span><span class="chip">Life transitions</span><span class="chip">Relationship issues</span><span class="chip">Self-esteem</span><span class="chip">Stress</span><span class="chip">Mood disorders</span><span class="chip">Chronic illness</span><span class="chip">Chronic pain</span><span class="chip">Cancer</span><span class="chip">Infertility</span><span class="chip">Domestic violence</span><span class="chip">Self-harm</span><span class="chip">Suicidal ideation</span><span class="chip">Peer relationships</span><span class="chip">Polyamory &amp; ENM</span><span class="chip">Sex-positive &amp; kink friendly</span><span class="chip">Transgender</span><span class="chip">Women's issues</span><span class="chip">Neurodivergence</span>
+        
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-0">Anxiety</button><span class="pop" role="tooltip" id="tip-0">Worry, racing thoughts, panic, or the constant hum of “what if.” Together you build ways to calm your body and quiet the spiral.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-1">Depression</button><span class="pop" role="tooltip" id="tip-1">Low mood, numbness, or losing interest in what you used to love. Support that meets you on the hard days.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-2">Trauma &amp; PTSD</button><span class="pop" role="tooltip" id="tip-2">Healing at your own pace. You never have to retell your story to do this work.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-3">Life transitions</button><span class="pop" role="tooltip" id="tip-3">Moves, breakups, new jobs, coming out, retirement. Support while the ground shifts under you.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-4">Relationship issues</button><span class="pop" role="tooltip" id="tip-4">Communication, conflict, boundaries, and patterns that keep repeating with partners, family, or friends.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-5">Self-esteem</button><span class="pop" role="tooltip" id="tip-5">Quieting the inner critic and building a kinder, steadier relationship with yourself.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-6">Stress</button><span class="pop" role="tooltip" id="tip-6">When everything feels like too much. Practical tools to lighten the load and protect your energy.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-7">Mood disorders</button><span class="pop" role="tooltip" id="tip-7">Support for bipolar disorder and other mood conditions, alongside any medical care you receive.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-8">Chronic illness</button><span class="pop" role="tooltip" id="tip-8">Living with a body that asks more of you. Room for the frustration, grief, and fatigue that come with it.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-9">Chronic pain</button><span class="pop" role="tooltip" id="tip-9">Coping with pain that doesn't go away, and with how it shapes work, rest, and relationships.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-10">Cancer</button><span class="pop" role="tooltip" id="tip-10">Support through diagnosis, treatment, and survivorship, or while caring for someone with cancer.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-11">Infertility</button><span class="pop" role="tooltip" id="tip-11">The waiting, the procedures, the losses, and the hope. A place to hold all of it.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-12">Domestic violence</button><span class="pop" role="tooltip" id="tip-12">Support for survivors, with your safety and your choices at the center.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-13">Self-harm</button><span class="pop" role="tooltip" id="tip-13">Nonjudgmental support for understanding urges and finding other ways to cope.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-14">Suicidal ideation</button><span class="pop" role="tooltip" id="tip-14">A safe place to talk openly about thoughts of suicide, without panic or judgment. In crisis now? Call or text 988.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-15">Peer relationships</button><span class="pop" role="tooltip" id="tip-15">Friendships, belonging, and social pressure, for teens and adults alike.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-16">Polyamory &amp; ENM</button><span class="pop" role="tooltip" id="tip-16">Affirming support for polyamorous and ethically non-monogamous people and relationships.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-17">Sex-positive &amp; kink friendly</button><span class="pop" role="tooltip" id="tip-17">Talk about sex, desire, and kink without shame and without having to explain yourself.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-18">Transgender</button><span class="pop" role="tooltip" id="tip-18">Affirming care for trans, nonbinary, and gender-expansive people, including letters for gender-affirming care.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-19">Women's issues</button><span class="pop" role="tooltip" id="tip-19">Support around the pressures, roles, and transitions that shape women's lives.</span></span>
+        <span class="tip"><button type="button" class="chip" aria-describedby="tip-20">Neurodivergence</button><span class="pop" role="tooltip" id="tip-20">Support for autistic, ADHD, and otherwise neurodivergent people that honors how your brain works.</span></span>
+      
       </div>
     </div>
   </div>
@@ -87,6 +110,22 @@
       function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
       try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
     });
+  });
+})();
+</script>
+<script>
+(function(){
+  function place(tip){
+    var pop=tip.querySelector('.pop'); if(!pop) return;
+    pop.style.setProperty('--shift','0px');
+    var r=pop.getBoundingClientRect(), pad=12, vw=document.documentElement.clientWidth, shift=0;
+    if(r.left<pad) shift=pad-r.left; else if(r.right>vw-pad) shift=(vw-pad)-r.right;
+    pop.style.setProperty('--shift',shift+'px');
+  }
+  document.querySelectorAll('.tip').forEach(function(tip){
+    tip.addEventListener('mouseenter',function(){place(tip)});
+    tip.addEventListener('focusin',function(){place(tip)});
+    tip.addEventListener('keydown',function(e){if(e.key==='Escape'){tip.querySelector('button').blur();}});
   });
 })();
 </script>

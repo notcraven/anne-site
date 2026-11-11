@@ -272,4 +272,14 @@ main h1{font-size:var(--step-3)}
 @keyframes sheen{0%{transform:translateX(-80px);opacity:0}12%{opacity:1}55%{transform:translateX(320px);opacity:1}62%,100%{transform:translateX(320px);opacity:0}}
 .aura{animation:aura 6.5s ease-in-out infinite}
 @keyframes aura{0%,100%{opacity:.75}50%{opacity:1}}
-@media (prefers-reduced-motion: reduce){.sheen{animation:none;opacity:0}.aura{animation:none}
+@media (prefers-reduced-motion: reduce){.sheen{animation:none;opacity:0}.aura{animation:none}}
+/* Specialty pop-outs */
+.tip{position:relative;display:inline-flex}
+.tip .chip{font:inherit;font-size:.88rem;cursor:help;transition:border-color .15s ease,color .15s ease}
+.tip:hover .chip,.tip .chip:focus-visible,.tip .chip:focus{border-color:var(--teal);color:var(--teal)}
+.tip-hint{color:var(--muted);font-size:.92rem;margin:-6px 0 14px}
+.pop{display:none;position:absolute;z-index:20;bottom:calc(100% + 10px);left:50%;transform:translateX(calc(-50% + var(--shift,0px)));width:max-content;max-width:min(280px,calc(100vw - 24px));background:var(--surface);color:var(--fg);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:12px;padding:12px 14px;font-size:.92rem;line-height:1.5;box-shadow:0 12px 32px color-mix(in srgb,var(--bg) 70%,transparent),0 2px 6px color-mix(in srgb,#000 18%,transparent);pointer-events:none}
+.pop::after{content:"";position:absolute;top:100%;left:calc(50% - var(--shift,0px));transform:translateX(-50%);border:7px solid transparent;border-top-color:var(--line)}
+.tip:hover .pop,.tip:focus-within .pop{display:block;animation:pop-in .16s ease-out}
+@keyframes pop-in{from{opacity:0;margin-bottom:-4px}to{opacity:1;margin-bottom:0}}
+@media (prefers-reduced-motion: reduce){.tip:hover .pop,.tip:focus-within .pop{animation:none}}
