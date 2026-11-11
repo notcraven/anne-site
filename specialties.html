@@ -34,6 +34,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-head">
   <div class="wrap head-inner">
     <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
@@ -52,7 +53,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- SPECIALTIES -->
 <section id="specialties">
   <div class="wrap">
@@ -62,15 +63,15 @@
       <p class="lede">Every specialty gets the same affirming, nonjudgmental care. These six are at the heart of Anne's work.</p>
     </div>
     <div class="spec-featured">
-      <article class="spec"><h3>Gender-affirming care letters</h3><p>Letters for gender-affirming medical care through a supportive, informed, and respectful process.</p></article>
-      <article class="spec"><h3>Autism</h3><p>Support that honors how your brain works and leaves the "fixing" out of it.</p></article>
-      <article class="spec"><h3>ADHD</h3><p>Practical strategies for focus, executive function, and self-acceptance in a world that runs on someone else's rhythm.</p></article>
-      <article class="spec"><h3>LGBTQ+</h3><p>An affirming space for every identity and expression, from questioning to out and proud.</p></article>
-      <article class="spec"><h3>Grief &amp; loss</h3><p>Room to grieve a person, a relationship, a pet, or the life you expected, at whatever pace grief keeps.</p></article>
-      <article class="spec"><h3>Sex-positive &amp; kink friendly</h3><p>Talk about sex, desire, and kink without shame and without having to explain yourself.</p></article>
+      <article class="spec"><h2>Gender-affirming care letters</h2><p>Letters for gender-affirming medical care through a supportive, informed, and respectful process.</p></article>
+      <article class="spec"><h2>Autism</h2><p>Support that honors how your brain works and leaves the "fixing" out of it.</p></article>
+      <article class="spec"><h2>ADHD</h2><p>Practical strategies for focus, executive function, and self-acceptance in a world that runs on someone else's rhythm.</p></article>
+      <article class="spec"><h2>LGBTQ+</h2><p>An affirming space for every identity and expression, from questioning to out and proud.</p></article>
+      <article class="spec"><h2>Grief &amp; loss</h2><p>Room to grieve a person, a relationship, a pet, or the life you expected, at whatever pace grief keeps.</p></article>
+      <article class="spec"><h2>Sex-positive &amp; kink friendly</h2><p>Talk about sex, desire, and kink without shame and without having to explain yourself.</p></article>
     </div>
     <div class="spec-all">
-      <h3>Also working with</h3>
+      <h2>Also working with</h2>
       <p class="tip-hint">Hover or tap any topic to learn more.</p>
       <div class="chips">
         
@@ -127,8 +128,9 @@
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var t=b.getAttribute('data-copy');
-      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
-      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      function say(m){var st=document.getElementById('copy-status');if(st){st.textContent='';setTimeout(function(){st.textContent=m;},50);}}
+      function done(){say((b.id==='copy-phone'?'Phone number':'Email address')+' copied');b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Copy unavailable. The text is selected, so press Control C or Command C to copy it.');b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
       try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
     });
   });
@@ -136,6 +138,7 @@
 </script>
 <script>
 (function(){
+  var tips=[].slice.call(document.querySelectorAll('.tip'));
   function place(tip){
     var pop=tip.querySelector('.pop'); if(!pop) return;
     pop.style.setProperty('--shift','0px');
@@ -143,11 +146,22 @@
     if(r.left<pad) shift=pad-r.left; else if(r.right>vw-pad) shift=(vw-pad)-r.right;
     pop.style.setProperty('--shift',shift+'px');
   }
-  document.querySelectorAll('.tip').forEach(function(tip){
-    tip.addEventListener('mouseenter',function(){place(tip)});
-    tip.addEventListener('focusin',function(){place(tip)});
-    tip.addEventListener('keydown',function(e){if(e.key==='Escape'){tip.querySelector('button').blur();}});
+  function reset(tip){tip.classList.remove('open','dismissed');}
+  tips.forEach(function(tip){
+    var btn=tip.querySelector('button');
+    tip.addEventListener('pointerenter',function(e){if(e.pointerType!=='mouse')return;tip.classList.remove('dismissed');place(tip);});
+    tip.addEventListener('pointerleave',function(e){if(e.pointerType!=='mouse')return;reset(tip);});
+    tip.addEventListener('focusin',function(){place(tip);});
+    tip.addEventListener('focusout',function(e){if(!tip.contains(e.relatedTarget)) reset(tip);});
+    btn.addEventListener('click',function(){
+      if(tip.classList.contains('open')){tip.classList.remove('open');tip.classList.add('dismissed');}
+      else{tips.forEach(function(t){if(t!==tip) reset(t);});tip.classList.remove('dismissed');tip.classList.add('open');place(tip);}
+    });
   });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'||e.key==='Esc'){tips.forEach(function(t){if(t.matches(':hover')||t.contains(document.activeElement)||t.classList.contains('open')){t.classList.remove('open');t.classList.add('dismissed');}});}
+  });
+  document.addEventListener('click',function(e){tips.forEach(function(t){if(!t.contains(e.target)) reset(t);});});
 })();
 </script>
 </body>

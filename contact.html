@@ -34,6 +34,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-head">
   <div class="wrap head-inner">
     <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
@@ -52,7 +53,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap contact-grid">
@@ -61,21 +62,22 @@
       <h1><span class="sr-only">Contact Anne Pidek, LMSW: </span>Let's begin together</h1>
       <p class="lede">You don't have to walk this path alone. Call, text, or email when you're ready, and Anne will get back to you to set up a first conversation.</p>
       <div class="lines">
+        <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
         <div class="cline">
           <div><span class="lbl">Phone</span><span class="val"><a href="tel:+18102461948">(810) 246-1948</a></span></div>
-          <button class="copy" type="button" data-copy="(810) 246-1948" id="copy-phone">Copy</button>
+          <button class="copy" type="button" data-copy="(810) 246-1948" id="copy-phone" aria-label="Copy phone number">Copy</button>
         </div>
         <div class="cline">
           <div><span class="lbl">Email</span><span class="val"><a href="mailto:apidekcrescent@gmail.com">apidekcrescent@gmail.com</a></span></div>
-          <button class="copy" type="button" data-copy="apidekcrescent@gmail.com" id="copy-email">Copy</button>
+          <button class="copy" type="button" data-copy="apidekcrescent@gmail.com" id="copy-email" aria-label="Copy email address">Copy</button>
         </div>
       </div>
       <p class="privacy">To protect your privacy, please keep first messages brief: your name, the best way to reach you, and whether you're looking for therapy or supervision. Details can wait for a secure conversation.</p>
     </div>
     <div class="where">
-      <div><h3>In person</h3><p>10683 South Saginaw Street, Suite B<br>Grand Blanc, MI 48439</p></div>
-      <div><h3>Online</h3><p>Secure telehealth anywhere in Michigan, with select evening openings.</p></div>
-      <div><h3>Who Anne sees</h3><p>Adolescents and adults for individual counseling; LLMSWs for supervision.</p></div>
+      <div><h2>In person</h2><p>10683 South Saginaw Street, Suite B<br>Grand Blanc, MI 48439</p></div>
+      <div><h2>Online</h2><p>Secure telehealth anywhere in Michigan, with select evening openings.</p></div>
+      <div><h2>Who Anne sees</h2><p>Adolescents and adults for individual counseling; LLMSWs for supervision.</p></div>
     </div>
   </div>
   <div class="wrap">
@@ -99,8 +101,9 @@
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var t=b.getAttribute('data-copy');
-      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
-      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      function say(m){var st=document.getElementById('copy-status');if(st){st.textContent='';setTimeout(function(){st.textContent=m;},50);}}
+      function done(){say((b.id==='copy-phone'?'Phone number':'Email address')+' copied');b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Copy unavailable. The text is selected, so press Control C or Command C to copy it.');b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
       try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
     });
   });

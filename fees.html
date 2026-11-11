@@ -34,6 +34,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-head">
   <div class="wrap head-inner">
     <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
@@ -52,7 +53,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 <!-- FEES -->
 <section class="fees" id="fees">
   <div class="wrap">
@@ -62,18 +63,18 @@
     </div>
     <div class="fee-grid">
       <div class="rate">
-        <h3>Self-pay session</h3>
+        <h2>Self-pay session</h2>
         <span class="price">$200</span>
         <span class="unit">per 50-minute individual session</span>
         <hr>
-        <h3>Payment methods</h3>
+        <h2>Payment methods</h2>
         <p>Visa, Mastercard, American Express, Discover, HSA, and cash.</p>
         <hr>
-        <h3>Out of network</h3>
+        <h2>Out of network</h2>
         <p>Anne can provide a superbill you can submit to your insurance for out-of-network reimbursement.</p>
       </div>
       <div class="fee-side">
-        <h3>Accepted insurance</h3>
+        <h2>Accepted insurance</h2>
         <ul class="ins">
           <li>Blue Cross Blue Shield (BCBS)</li><li>Blue Care Network (BCN)</li><li>Blue Cross Complete (BCC)</li><li>ASR Health Benefits</li><li>Humana</li><li>Medicare</li><li>Medicaid &amp; Medicaid health plans</li><li>TRICARE</li><li>Priority Health</li><li>UnitedHealthcare (UHC)</li><li>McLaren Health Plan</li><li>Meridian</li><li>Molina</li><li>Optum</li><li>HAP</li><li>HAP CareSource</li>
         </ul>
@@ -111,8 +112,9 @@
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var t=b.getAttribute('data-copy');
-      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
-      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      function say(m){var st=document.getElementById('copy-status');if(st){st.textContent='';setTimeout(function(){st.textContent=m;},50);}}
+      function done(){say((b.id==='copy-phone'?'Phone number':'Email address')+' copied');b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Copy unavailable. The text is selected, so press Control C or Command C to copy it.');b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
       try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
     });
   });

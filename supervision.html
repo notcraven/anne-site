@@ -34,6 +34,7 @@
 
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header class="site-head">
   <div class="wrap head-inner">
     <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
@@ -52,7 +53,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <section class="supervision sub-hero">
   <div class="wrap sup-grid">
@@ -138,7 +139,7 @@
     </ol>
   </div>
   <div class="wrap">
-    <p class="lic-source">Requirements come from Michigan's administrative rules and LARA's licensing guide, and they can change. Confirm current details with LARA before you plan your hours. Last reviewed November 2026. Sources: <a href="https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/social/masters-social-work-licensing-guide-and-faqs" target="_blank" rel="noopener">LARA master's social work licensing guide and FAQs</a>, <a href="https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/social" target="_blank" rel="noopener">LARA social work licensing</a>, <a href="https://www.law.cornell.edu/regulations/michigan/Mich-Admin-Code-R-338-2949" target="_blank" rel="noopener">Mich. Admin. Code R 338.2949</a>.</p>
+    <p class="lic-source">Requirements come from Michigan's administrative rules and LARA's licensing guide, and they can change. Confirm current details with LARA before you plan your hours. Last reviewed November 2026. Sources: <a href="https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/social/masters-social-work-licensing-guide-and-faqs" target="_blank" rel="noopener">LARA master's social work licensing guide and FAQs<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.michigan.gov/lara/bureau-list/bpl/health/hp-lic-health-prof/social" target="_blank" rel="noopener">LARA social work licensing<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.law.cornell.edu/regulations/michigan/Mich-Admin-Code-R-338-2949" target="_blank" rel="noopener">Mich. Admin. Code R 338.2949<span class="sr-only"> (opens in a new tab)</span></a>.</p>
   </div>
 </section>
 
@@ -162,13 +163,14 @@
       <span class="eyebrow">Ask about supervision</span>
       <h2>Let's talk about your path to licensure</h2>
       <div class="lines">
+        <span class="sr-only" role="status" aria-live="polite" id="copy-status"></span>
         <div class="cline">
           <div><span class="lbl">Phone</span><span class="val"><a href="tel:+18102461948">(810) 246-1948</a></span></div>
-          <button class="copy" type="button" data-copy="(810) 246-1948" id="copy-phone">Copy</button>
+          <button class="copy" type="button" data-copy="(810) 246-1948" id="copy-phone" aria-label="Copy phone number">Copy</button>
         </div>
         <div class="cline">
           <div><span class="lbl">Email</span><span class="val"><a href="mailto:apidekcrescent@gmail.com">apidekcrescent@gmail.com</a></span></div>
-          <button class="copy" type="button" data-copy="apidekcrescent@gmail.com" id="copy-email">Copy</button>
+          <button class="copy" type="button" data-copy="apidekcrescent@gmail.com" id="copy-email" aria-label="Copy email address">Copy</button>
         </div>
       </div>
     </div>
@@ -196,8 +198,9 @@
   document.querySelectorAll('.copy').forEach(function(b){
     b.addEventListener('click',function(){
       var t=b.getAttribute('data-copy');
-      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
-      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      function say(m){var st=document.getElementById('copy-status');if(st){st.textContent='';setTimeout(function(){st.textContent=m;},50);}}
+      function done(){say((b.id==='copy-phone'?'Phone number':'Email address')+' copied');b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);say('Copy unavailable. The text is selected, so press Control C or Command C to copy it.');b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
       try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
     });
   });
