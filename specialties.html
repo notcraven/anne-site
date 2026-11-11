@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Specialties · The Difference Counseling</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Gender-affirming care letters, autism, ADHD, LGBTQ+ care, trauma, anxiety, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
+      <svg viewBox="0 0 34 28" aria-hidden="true"><polygon class="f4" points="17,14 6,2 1,10 9,15"/><polygon class="f2" points="17,14 28,2 33,10 25,15"/><polygon class="f1" points="17,15 8,17 6,25 14,22"/><polygon class="f3" points="17,15 26,17 28,25 20,22"/></svg>
+      <span class="brand-name">The Difference<small>Counseling Services</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="approach.html">Approach</a>
+      <a href="about.html">About Anne</a>
+      <a href="specialties.html" aria-current="page">Specialties</a>
+      <a href="supervision.html">Supervision</a>
+      <a href="khufu.html">Khufu</a>
+      <a href="fees.html">Fees</a>
+      <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- SPECIALTIES -->
+<section id="specialties">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Areas of expertise</span>
+      <h1>A garden of care</h1>
+      <p class="lede">Every specialty gets the same affirming, nonjudgmental care. These four are at the heart of Anne's work.</p>
+    </div>
+    <div class="spec-featured">
+      <article class="spec"><h3>Gender-affirming care letters</h3><p>Letters for gender-affirming medical care through a supportive, informed, and respectful process.</p></article>
+      <article class="spec"><h3>Autism</h3><p>Support that honors how your brain works and leaves the "fixing" out of it.</p></article>
+      <article class="spec"><h3>ADHD</h3><p>Practical strategies for focus, executive function, and self-acceptance in a world that runs on someone else's rhythm.</p></article>
+      <article class="spec"><h3>LGBTQ+</h3><p>An affirming space for every identity and expression, from questioning to out and proud.</p></article>
+    </div>
+    <div class="spec-all">
+      <h3>Also working with</h3>
+      <div class="chips">
+        <span class="chip">Anxiety</span><span class="chip">Depression</span><span class="chip">Trauma &amp; PTSD</span><span class="chip">Grief</span><span class="chip">Life transitions</span><span class="chip">Relationship issues</span><span class="chip">Self-esteem</span><span class="chip">Stress</span><span class="chip">Mood disorders</span><span class="chip">Chronic illness</span><span class="chip">Chronic pain</span><span class="chip">Cancer</span><span class="chip">Infertility</span><span class="chip">Domestic violence</span><span class="chip">Self-harm</span><span class="chip">Suicidal ideation</span><span class="chip">Peer relationships</span><span class="chip">Polyamory &amp; ENM</span><span class="chip">Sex-positive &amp; kink friendly</span><span class="chip">Transgender</span><span class="chip">Women's issues</span><span class="chip">Neurodivergence</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap teaser">
+    <div class="sec-head">
+      <span class="eyebrow">Take the first step</span>
+      <h2>Let's begin together</h2>
+      <p class="lede">You don't have to walk this path alone. Reach out when you're ready.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 The Difference Counseling Services · Anne Pidek, LMSW · Grand Blanc, Michigan</span>
+    <span class="badges"><span class="chip">LGBTQ+ affirming</span><span class="chip">Neurodivergent-affirming</span><span class="chip">Trauma-informed</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy');
+      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+</body>
+</html>

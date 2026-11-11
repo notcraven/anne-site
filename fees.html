@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fees · The Difference Counseling</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Self-pay rate, accepted insurance, and payment methods for therapy with Anne Pidek, LMSW.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
+      <svg viewBox="0 0 34 28" aria-hidden="true"><polygon class="f4" points="17,14 6,2 1,10 9,15"/><polygon class="f2" points="17,14 28,2 33,10 25,15"/><polygon class="f1" points="17,15 8,17 6,25 14,22"/><polygon class="f3" points="17,15 26,17 28,25 20,22"/></svg>
+      <span class="brand-name">The Difference<small>Counseling Services</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="approach.html">Approach</a>
+      <a href="about.html">About Anne</a>
+      <a href="specialties.html">Specialties</a>
+      <a href="supervision.html">Supervision</a>
+      <a href="khufu.html">Khufu</a>
+      <a href="fees.html" aria-current="page">Fees</a>
+      <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- FEES -->
+<section class="fees" id="fees">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Fees &amp; insurance</span>
+      <h1>Clear numbers, so you can focus on healing</h1>
+    </div>
+    <div class="fee-grid">
+      <div class="rate">
+        <h3>Self-pay session</h3>
+        <span class="price">$200</span>
+        <span class="unit">per 50-minute individual session</span>
+        <hr>
+        <h3>Payment methods</h3>
+        <p>Visa, Mastercard, American Express, Discover, HSA, and cash.</p>
+        <hr>
+        <h3>Out of network</h3>
+        <p>Anne can provide a superbill you can submit to your insurance for out-of-network reimbursement.</p>
+      </div>
+      <div class="fee-side">
+        <h3>Accepted insurance</h3>
+        <ul class="ins">
+          <li>Blue Cross Blue Shield (BCBS)</li><li>Blue Care Network (BCN)</li><li>Blue Cross Complete (BCC)</li><li>ASR Health Benefits</li><li>Humana</li><li>Medicare</li><li>Medicaid &amp; Medicaid health plans</li><li>TRICARE</li><li>Priority Health</li><li>UnitedHealthcare (UHC)</li><li>McLaren Health Plan</li><li>Meridian</li><li>Molina</li><li>Optum</li><li>HAP</li><li>HAP CareSource</li>
+        </ul>
+        <p>Anne is not in network with Cigna. Before your first session, please call your insurance to confirm your mental health benefits, copay, and any deductible.</p>
+        <p class="gfe"><b>Good Faith Estimate.</b> Under the No Surprises Act, if you aren't using insurance you have the right to receive a Good Faith Estimate of the expected cost of your care. Ask Anne for one before your first session.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap teaser">
+    <div class="sec-head">
+      <span class="eyebrow">Take the first step</span>
+      <h2>Let's begin together</h2>
+      <p class="lede">You don't have to walk this path alone. Reach out when you're ready.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 The Difference Counseling Services · Anne Pidek, LMSW · Grand Blanc, Michigan</span>
+    <span class="badges"><span class="chip">LGBTQ+ affirming</span><span class="chip">Neurodivergent-affirming</span><span class="chip">Trauma-informed</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy');
+      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About Anne · The Difference Counseling</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Meet Anne Pidek, LMSW, an LGBTQ+ affirming, neurodivergent-affirming therapist in Grand Blanc, Michigan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="index.html" aria-label="The Difference Counseling Services, home">
+      <svg viewBox="0 0 34 28" aria-hidden="true"><polygon class="f4" points="17,14 6,2 1,10 9,15"/><polygon class="f2" points="17,14 28,2 33,10 25,15"/><polygon class="f1" points="17,15 8,17 6,25 14,22"/><polygon class="f3" points="17,15 26,17 28,25 20,22"/></svg>
+      <span class="brand-name">The Difference<small>Counseling Services</small></span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="approach.html">Approach</a>
+      <a href="about.html" aria-current="page">About Anne</a>
+      <a href="specialties.html">Specialties</a>
+      <a href="supervision.html">Supervision</a>
+      <a href="khufu.html">Khufu</a>
+      <a href="fees.html">Fees</a>
+      <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="photo">
+      <!-- Drop Anne's headshot at images/anne.jpg -->
+      <img src="images/anne.jpg" alt="Anne Pidek, LMSW, smiling" onerror="this.remove()">
+      <span class="photo-fallback">AP<small>Photo of Anne</small></span>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Meet your therapist</span>
+      <h1>Anne Pidek, LMSW</h1>
+      <div class="creds"><span class="chip">She / Her</span><span class="chip">Licensed Master Social Worker</span><span class="chip">20+ years of experience</span></div>
+      <p class="pull">“I strive to create a safe space for healing and empowerment for whoever seeks therapy.”</p>
+      <p>Anne's passion is working with people who are LGBTQ+, including letters for gender-affirming care, people who are neurodivergent, and people who have lived through trauma. She believes therapy doesn't have to be a negative or frightening experience.</p>
+      <p>She has drawn from several treatment methods to build a style of her own: conversational, client-led, and grounded in what you already do well. Over more than twenty years she has worked with the LGBTQIA2S+ community, neurodivergent people, adolescents, adults, elders, people with intellectual disabilities, and trauma survivors across a range of settings.</p>
+      <p>The Difference Counseling Services is her private practice in Grand Blanc, offering individual counseling for adolescents and adults, plus <a href="supervision.html">clinical supervision for LLMSWs</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap teaser">
+    <div class="sec-head">
+      <span class="eyebrow">Take the first step</span>
+      <h2>Let's begin together</h2>
+      <p class="lede">You don't have to walk this path alone. Reach out when you're ready.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">Contact Anne</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 The Difference Counseling Services · Anne Pidek, LMSW · Grand Blanc, Michigan</span>
+    <span class="badges"><span class="chip">LGBTQ+ affirming</span><span class="chip">Neurodivergent-affirming</span><span class="chip">Trauma-informed</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menu-btn'), nav=document.getElementById('nav');
+  btn.addEventListener('click',function(){var o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.textContent=o?'Close':'Menu';});
+  nav.addEventListener('click',function(e){if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.textContent='Menu';}});
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-copy');
+      function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1800);}
+      function fallback(){var v=b.parentNode.querySelector('.val');var r=document.createRange();r.selectNodeContents(v);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected';setTimeout(function(){b.textContent='Copy';},1800);}
+      try{navigator.clipboard.writeText(t).then(done,fallback);}catch(e){fallback();}
+    });
+  });
+})();
+</script>
+</body>
+</html>
