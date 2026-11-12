@@ -346,3 +346,26 @@ main:focus{outline:none}
 .foot-logo{grid-row:span 2}
 .foot .badges{justify-self:start}
 @media (max-width:640px){.foot{grid-template-columns:1fr}.foot-logo{grid-row:auto}}
+
+/* 5-second hero */
+.hero h1{font-size:clamp(2.1rem,4.3vw,3.3rem);line-height:1.12}
+.hero .lede{font-size:var(--step-1)}
+.hero-specs{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.hero-specs .chip{font-size:.88rem}
+.hero-more{font-size:.92rem;font-weight:600;margin-left:4px}
+@media (max-width:860px){
+  .hero{padding-block:20px 48px}
+  .hero-grid{gap:16px}
+  .bf-wrap{max-width:170px}
+  .motion-toggle{right:-70px;bottom:auto;top:50%;transform:translateY(-50%);font-size:.72rem;padding:5px 10px}
+  .hero .lede{font-size:var(--step-0)}
+}
+
+/* Pause control: icon + label; icon-only on narrow screens */
+.motion-toggle{display:inline-flex;align-items:center;gap:8px}
+.mt-icon{width:10px;height:10px;flex:none;background:linear-gradient(90deg,currentColor 0 35%,transparent 35% 65%,currentColor 65%)}
+.motion-toggle[aria-pressed="true"] .mt-icon{background:currentColor;clip-path:polygon(0 0,100% 50%,0 100%)}
+@media (max-width:860px){
+  .motion-toggle{right:-44px;top:4px;bottom:auto;transform:none;width:34px;height:34px;padding:0;justify-content:center;border-radius:50%}
+  .mt-label{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+}
