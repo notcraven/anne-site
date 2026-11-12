@@ -369,3 +369,11 @@ main:focus{outline:none}
   .motion-toggle{right:-44px;top:4px;bottom:auto;transform:none;width:34px;height:34px;padding:0;justify-content:center;border-radius:50%}
   .mt-label{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
 }
+
+.hero-specs{gap:8px;column-gap:7px}
+.hero-specs .chip{white-space:nowrap;font-size:.85rem;padding:5px 11px}
+.hero-more{margin:-8px 0 0;justify-self:start;width:max-content}
+.hero-grid{grid-template-columns:1.25fr .75fr}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+@media (min-width:861px) and (max-width:1010px){.hero-specs{display:grid;grid-template-columns:repeat(2,max-content);justify-content:start}}
+@media (min-width:361px) and (max-width:700px){.hero-specs{display:grid;grid-template-columns:repeat(2,max-content);justify-content:start}}
