@@ -381,3 +381,10 @@ main:focus{outline:none}
 .motion-toggle{position:static;display:flex;width:max-content;margin:14px auto 0}
 @media (max-width:860px){.motion-toggle{position:absolute;margin:0}}
 @media (max-width:860px){.motion-toggle{width:34px;height:34px}}
+
+/* Khufu page: single photo */
+.khufu-photos{padding-bottom:0}
+.khufu-main{width:100%}
+/* Khufu card on the home page */
+.explore .has-avatar{position:relative;padding-right:104px}
+.card-avatar{position:absolute;top:18px;right:18px;width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line),0 0 18px color-mix(in srgb,var(--amethyst) 35%,transparent)}
