@@ -388,3 +388,12 @@ main:focus{outline:none}
 /* Khufu card on the home page */
 .explore .has-avatar{position:relative;padding-right:104px}
 .card-avatar{position:absolute;top:18px;right:18px;width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--bg);box-shadow:0 0 0 1px var(--line),0 0 18px color-mix(in srgb,var(--amethyst) 35%,transparent)}
+
+/* Footer lockup: vector butterfly + live text (legible at small sizes) */
+.foot-lockup{display:grid;justify-items:center;gap:6px;width:max-content;grid-row:span 2}
+.foot-lockup img{height:46px;width:auto;filter:drop-shadow(0 0 8px rgba(185,138,208,.45)) drop-shadow(0 0 16px rgba(47,176,166,.25))}
+.fl-name{font-family:var(--display);font-size:1.75rem;line-height:1;color:#fcf3dd;text-shadow:0 0 14px rgba(252,243,221,.22)}
+.fl-tag{display:flex;align-items:center;gap:10px;font-size:.66rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--teal)}
+.fl-tag::before,.fl-tag::after{content:"";width:22px;height:1px;background:currentColor;opacity:.8}
+@media (max-width:640px){.foot-lockup{grid-row:auto;justify-self:start}}
+.fl-tag::before{margin-right:.3em}
