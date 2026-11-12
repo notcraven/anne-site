@@ -377,3 +377,7 @@ main:focus{outline:none}
 @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
 @media (min-width:861px) and (max-width:1010px){.hero-specs{display:grid;grid-template-columns:repeat(2,max-content);justify-content:start}}
 @media (min-width:361px) and (max-width:700px){.hero-specs{display:grid;grid-template-columns:repeat(2,max-content);justify-content:start}}
+/* Pause control sits below the butterfly on wide screens, beside it on phones */
+.motion-toggle{position:static;display:flex;width:max-content;margin:14px auto 0}
+@media (max-width:860px){.motion-toggle{position:absolute;margin:0}}
+@media (max-width:860px){.motion-toggle{width:34px;height:34px}}
