@@ -413,3 +413,37 @@ main:focus{outline:none}
 @media (prefers-reduced-motion: reduce){.faq-item summary::after{transition:none}}
 @media (max-width:860px){.faq-grid{grid-template-columns:1fr;gap:24px}.faq-grid .sec-head{position:static}}
 .explore .spec:nth-child(6){border-top-color:var(--amethyst)}
+
+/* ===== Specialty detail pages ===== */
+.topic-hero{padding-block:clamp(32px,6vw,72px) clamp(36px,5vw,56px);background:radial-gradient(60% 80% at 88% 20%,color-mix(in srgb,var(--eggplant) 50%,transparent),transparent 70%),var(--bg);border-bottom:1px solid var(--line)}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px 8px;list-style:none;margin:0 0 22px;padding:0;font-size:.9rem;color:var(--muted)}
+.crumbs li+li::before{content:"/";margin-right:8px;color:var(--line)}
+.crumbs a{color:var(--muted)}
+.crumbs a:hover{color:var(--teal)}
+.crumbs [aria-current]{color:var(--fg)}
+.topic-head{margin-bottom:24px}
+.topic-head h1{font-size:clamp(2.1rem,4.6vw,3.3rem)}
+.topic-head .lede{font-size:var(--step-1);color:var(--fg);opacity:.86}
+.topic-grid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:56px;align-items:start}
+.topic-main{display:grid;gap:44px;min-width:0}
+.topic-block h2{font-size:var(--step-2);margin-bottom:14px}
+.topic-block p{color:var(--muted);max-width:66ch}
+.topic-block p+p,.topic-block p+.ticks{margin-top:14px}
+.topic-block .ticks{max-width:66ch;gap:10px;font-size:1rem}
+.topic-aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 96px);display:grid;gap:16px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:0 0 var(--radius) var(--radius);padding:24px}
+.aside-title{font-size:var(--step-1)}
+.aside-facts{margin:0;display:grid;gap:12px}
+.aside-facts div{display:grid;gap:2px}
+.aside-facts dt{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--citrine);font-weight:600}
+.aside-facts dd{margin:0;color:var(--fg);font-size:.95rem}
+.topic-aside .btn{justify-content:center}
+.aside-link{font-size:.92rem;justify-self:center}
+.related{background:var(--bg-2);border-top:1px solid var(--line)}
+@media (max-width:900px){.topic-grid{grid-template-columns:1fr;gap:40px}.topic-aside{position:static}}
+/* Learn more links on Specialties cards */
+.spec-featured .spec{display:flex;flex-direction:column}
+.card-link{display:inline-flex;align-items:center;gap:6px;margin-top:auto;padding-top:10px;font-weight:600;font-size:.92rem;text-decoration:none;width:max-content}
+.card-link svg{transition:transform .15s ease}
+.card-link:hover svg{transform:translateX(3px)}
+.card-link:hover span:not(.sr-only),.card-link:hover{text-decoration:underline;text-underline-offset:3px}
+@media (prefers-reduced-motion: reduce){.card-link svg{transition:none}}
